@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alaa Matani · Software Engineer</title>
+  <meta name="description" content="Alaa Matani: final-year Computer Science student at the Technion. Co-developer of DayCraft on Google Play; systems, data and ML projects." />
+  <meta property="og:title" content="Alaa Matani · Software Engineer" />
+  <meta property="og:description" content="Final-year CS student at the Technion. Dive into my projects." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b5a8a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    { "imports": {
+      "three": "./vendor/three.module.js",
+      "three/addons/utils/BufferGeometryUtils.js": "./vendor/BufferGeometryUtils.js"
+    } }
+  </script>
+</head>
+<body>
+  <canvas id="ocean" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="Alaa Matani, back to top">
+      <svg viewBox="0 0 64 40" aria-hidden="true"><path d="M32 38c-1-9-3-15-8-19C18 14 9 14 2 6c8 1 15 0 20 3 4 2 7 6 10 11 3-5 6-9 10-11 5-3 12-2 20-3-7 8-16 8-22 13-5 4-7 10-8 19z" fill="currentColor"/></svg>
+      <span>Alaa Matani</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><span></span><span></span></button>
+    <nav id="navLinks" class="nav-links">
+      <a href="#about">About</a>
+      <a href="#daycraft">DayCraft</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <aside class="gauge" aria-hidden="true">
+    <div class="gauge-track"><div class="gauge-fill" id="gaugeFill"></div><div class="gauge-dot" id="gaugeDot"></div></div>
+    <div class="gauge-read"><span id="depthM">0</span> m<small id="depthZone">Surface</small></div>
+  </aside>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="pill" data-hero><span class="pulse"></span>Open to internship &amp; full-time roles</p>
+        <h1 data-hero>Alaa<br/>Matani<span class="dot">.</span></h1>
+        <p class="lead" data-hero>
+          Final-year Computer Science student at the <strong>Technion</strong>. I build software that ships,
+          from an AI-powered app on <strong>Google Play</strong> to multithreaded servers in C.
+        </p>
+        <div class="cta-row" data-hero>
+          <a class="btn btn-primary" href="#daycraft">Dive into my work <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about"><span>Scroll to dive</span><i></i></a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <p class="zone" data-reveal><span>0–200 m</span> Sunlight zone</p>
+        <h2 data-reveal>About me</h2>
+        <div class="about-grid">
+          <div class="glass about-text" data-reveal>
+            <p>I'm a final-year Computer Science student at the <strong>Technion – Israel Institute of Technology</strong>, graduating in <strong>March 2027</strong>. I like working across the stack, from system calls all the way up to the person using the app.</p>
+            <p>In a team of three, I co-developed and published <strong>DayCraft</strong>, an AI-powered study planner on Google Play. I integrated the <strong>Google Gemini API</strong> to turn students' goals into study checklists and schedules, and built the Firebase backend behind it.</p>
+            <p>My coursework projects go deeper: a <strong>multithreaded web server in C</strong>, a <strong>Linux shell in C++</strong>, a PostgreSQL analytics layer, and machine-learning and AI algorithms written <strong>from scratch</strong> in Python, all built on a solid base of data structures and algorithms.</p>
+            <p>Outside class, I mentored 8 high-school students with <strong>QueenB</strong> as they built their first web apps.</p>
+          </div>
+          <ul class="facts" data-reveal>
+            <li class="glass"><span class="fact-k">Studying</span><span class="fact-v">B.Sc. Computer Science, Technion</span><span class="fact-s">Graduating March 2027</span></li>
+            <li class="glass"><span class="fact-k">Shipped</span><span class="fact-v">DayCraft on Google Play</span><span class="fact-s">Flutter · Firebase · Gemini API</span></li>
+            <li class="glass"><span class="fact-k">Languages</span><span class="fact-v">Arabic · Hebrew · English</span><span class="fact-s">Native · Fluent · Fluent</span></li>
+            <li class="glass"><span class="fact-k">Looking for</span><span class="fact-v">Internship &amp; full-time SWE roles</span><span class="fact-s">Based in Israel</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAYCRAFT -->
+    <section id="daycraft" class="section">
+      <div class="wrap">
+        <p class="zone" data-reveal><span>200–1,000 m</span> Twilight zone</p>
+        <h2 data-reveal>Featured: DayCraft</h2>
+        <article class="glass feature" data-reveal>
+          <div class="feature-media">
+            <button class="video" id="video" data-yt="T7oPbjkDgrQ" aria-label="Play the DayCraft demo video">
+              <img src="https://i.ytimg.com/vi/T7oPbjkDgrQ/hqdefault.jpg" alt="DayCraft demo video thumbnail" loading="lazy" />
+              <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+            </button>
+          </div>
+          <div class="feature-body">
+            <p class="tag">Published on Google Play · 2026 · Team of 3</p>
+            <h3>An AI-powered study planner for university students</h3>
+            <p>Students set their goals, and DayCraft's Gemini-powered assistant turns them into study checklists and schedule plans, with courses, deadlines and reminders in one place.</p>
+            <ul class="ticks">
+              <li>Integrated the <b>Google Gemini API</b>, enforcing structured JSON responses with fallback parsing for unexpected output</li>
+              <li>Built the <b>Firebase backend</b>: email/password auth, a per-user, per-semester Firestore model, and batched writes for consistent updates</li>
+              <li><b>Schedule-conflict detection</b> that flags overlapping courses before they're added</li>
+              <li><b>Deadline reminders</b> 24 hours ahead, using timezone-aware local notifications</li>
+              <li>An <b>in-app reporting tool</b> that lets users flag inaccurate or unsafe AI responses</li>
+            </ul>
+            <div class="chips"><span>Flutter</span><span>Dart</span><span>Firebase Auth</span><span>Firestore</span><span>Gemini API</span><span>Provider</span></div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.technion.daycraft" target="_blank" rel="noopener">Get it on Google Play ↗</a>
+              <a class="btn btn-ghost" href="https://youtu.be/T7oPbjkDgrQ" target="_blank" rel="noopener">Demo on YouTube ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <p class="zone" data-reveal><span>1,000–3,000 m</span> Midnight zone</p>
+        <h2 data-reveal>More projects</h2>
+        <div class="filters" role="tablist" aria-label="Filter projects" data-reveal>
+          <button class="on" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button data-filter="systems" role="tab" aria-selected="false">Systems</button>
+          <button data-filter="data" role="tab" aria-selected="false">Data &amp; ML</button>
+        </div>
+        <div class="grid" id="grid">
+          <article class="glass card" data-cat="systems" data-reveal>
+            <div class="card-top"><span class="metric">6</span><span class="metric-l">overload<br/>policies</span></div>
+            <h3>Multithreaded Web Server</h3>
+            <p>An HTTP/1.0 server with a worker thread pool and a bounded producer–consumer request queue, built for the Technion's Operating Systems course.</p>
+            <ul>
+              <li>Mutex + condition variables, so workers never busy-wait</li>
+              <li>Block, drop-tail, drop-head, block-flush, dynamic and random-drop policies</li>
+              <li>Per-request and per-thread stats in the response headers</li>
+            </ul>
+            <div class="chips"><span>C</span><span>POSIX Threads</span><span>Sockets</span><span>Linux</span></div>
+            <a class="repo" href="https://github.com/matanialaa/multithreaded-web-server" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </article>
+
+          <article class="glass card" data-cat="systems" data-reveal>
+            <div class="card-top"><span class="metric">12</span><span class="metric-l">built-in<br/>commands</span></div>
+            <h3>smash: a Linux Shell</h3>
+            <p>A Unix-style command shell in C++ with built-in commands, external programs, pipes, redirection and job control.</p>
+            <ul>
+              <li>Runs programs with fork/execvp and tracks background jobs</li>
+              <li>Pipes (<code>|</code>, <code>|&amp;</code>) and redirection (<code>&gt;</code>, <code>&gt;&gt;</code>) via dup2</li>
+              <li>Ctrl-C / Ctrl-Z signal handling, and CPU pinning with <code>setcore</code></li>
+            </ul>
+            <div class="chips"><span>C++</span><span>System calls</span><span>Signals</span><span>OOP</span></div>
+            <a class="repo" href="https://github.com/matanialaa/linux-shell" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </article>
+
+          <article class="glass card" data-cat="data" data-reveal>
+            <div class="card-top"><span class="metric">26</span><span class="metric-l">API functions,<br/>1 query each</span></div>
+            <h3>Restaurant Delivery Database</h3>
+            <p>The database design and Python data access layer for a restaurant delivery app, where every filter and aggregation runs in SQL.</p>
+            <ul>
+              <li>6-table schema with keys, check constraints and cascading deletes</li>
+              <li>Analytics views for monthly profit, top spenders and price changes</li>
+              <li>Dish recommendations from customers with similar tastes</li>
+            </ul>
+            <div class="chips"><span>PostgreSQL</span><span>SQL</span><span>Python</span><span>psycopg2</span></div>
+            <a class="repo" href="https://github.com/matanialaa/restaurant-database" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </article>
+
+          <article class="glass card" data-cat="data" data-reveal>
+            <div class="card-top"><span class="metric">86.0%</span><span class="metric-l">k-NN accuracy,<br/>up from 58.8%</span></div>
+            <h3>Machine Learning</h3>
+            <p>Classification and regression on a 1,250-patient medical dataset, with several algorithms written from scratch.</p>
+            <ul>
+              <li>Vectorized k-NN from scratch, plus a leakage-safe prep pipeline</li>
+              <li>361-combination grid search to tune a decision tree</li>
+              <li>Gradient boosting: validation MSE from 0.0704 to 0.0017</li>
+            </ul>
+            <div class="chips"><span>Python</span><span>scikit-learn</span><span>NumPy</span><span>pandas</span></div>
+            <a class="repo" href="https://github.com/matanialaa/machine-learning" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </article>
+
+          <article class="glass card" data-cat="data" data-reveal>
+            <div class="card-top"><span class="metric">94.69%</span><span class="metric-l">ID3 tree<br/>test accuracy</span></div>
+            <h3>Artificial Intelligence</h3>
+            <p>Search algorithms, game-playing agents, Markov decision processes and decision trees, implemented in Python.</p>
+            <ul>
+              <li>A* found paths up to 32% cheaper than BFS</li>
+              <li>Minimax, Alpha-Beta and Expectimax agents with a 1-second move limit</li>
+              <li>Value and policy iteration, and an ID3 tree built from scratch</li>
+            </ul>
+            <div class="chips"><span>Python</span><span>NumPy</span><span>Search</span><span>MDPs</span></div>
+            <a class="repo" href="https://github.com/matanialaa/artificial-intelligence" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </article>
+
+          <article class="glass card card-more" data-cat="systems data" data-reveal>
+            <h3>Also in the depths</h3>
+            <ul class="mini">
+              <li><b>Memory allocator</b>: malloc, free and realloc in C++ with sbrk, mmap and block coalescing</li>
+              <li><b>Streaming-service DB</b>: a generic AVL-tree template with O(log n) operations</li>
+              <li><b>Branch predictor sim</b>: searched 2<sup>20</sup> tables to reach 94% accuracy</li>
+            </ul>
+            <a class="repo" href="https://github.com/matanialaa" target="_blank" rel="noopener">All repositories ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <p class="zone" data-reveal><span>3,000 m</span> Deep sea</p>
+        <h2 data-reveal>Toolkit</h2>
+        <div class="skills">
+          <div class="glass skill" data-reveal><h3>Languages</h3><div class="chips"><span>Python</span><span>C++</span><span>C</span><span>Dart</span><span>SQL</span><span>JavaScript</span><span>HTML</span></div></div>
+          <div class="glass skill" data-reveal><h3>Mobile &amp; Backend</h3><div class="chips"><span>Flutter</span><span>Firebase Auth</span><span>Firestore</span><span>REST APIs</span><span>Gemini API</span><span>Provider</span></div></div>
+          <div class="glass skill" data-reveal><h3>Systems</h3><div class="chips"><span>Linux</span><span>POSIX Threads</span><span>Sockets</span><span>fork / exec / pipes</span><span>sbrk / mmap</span></div></div>
+          <div class="glass skill" data-reveal><h3>Data &amp; ML</h3><div class="chips"><span>PostgreSQL</span><span>scikit-learn</span><span>pandas</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span></div></div>
+          <div class="glass skill" data-reveal><h3>Algorithms &amp; AI</h3><div class="chips"><span>A* &amp; graph search</span><span>Minimax / α-β</span><span>MDPs</span><span>Decision trees</span><span>AVL trees</span></div></div>
+          <div class="glass skill" data-reveal><h3>Tools</h3><div class="chips"><span>Git</span><span>GitHub</span><span>Google Play Console</span><span>Jupyter</span><span>Colab</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="wrap">
+        <p class="zone" data-reveal><span>4,000 m</span> The abyss</p>
+        <h2 class="big" data-reveal>Let's make<br/>waves together.</h2>
+        <p class="lead" data-reveal>I graduate in March 2027 and I'm open to internship and full-time software engineering roles. The fastest way to reach me is email.</p>
+        <div class="contact-row" data-reveal>
+          <a class="btn btn-primary btn-lg" href="mailto:matanialaa1@gmail.com">matanialaa1@gmail.com</a>
+          <a class="btn btn-ghost btn-lg" href="https://www.linkedin.com/in/alaa-matani" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn-ghost btn-lg" href="https://github.com/matanialaa" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <footer class="foot">© <span id="year">2026</span> Alaa Matani · Built with Three.js &amp; GSAP · No whales were harmed.</footer>
+    </section>
+  </main>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="ui.js"></script>
+  <script type="module" src="ocean.js"></script>
+</body>
+</html>
